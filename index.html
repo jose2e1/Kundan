@@ -1,158 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kundan Sharma - Author & Educator</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
-        
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-        }
-        
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Merriweather', serif;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.5rem;
-            margin-top: 2.5rem;
-        }
-        
-        .intro {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .book {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .book-title {
-            color: var(--primary);
-            margin-top: 0;
-        }
-        
-        .book-year {
-            color: #7f8c8d;
-            font-style: italic;
-        }
-        
-        section {
-            margin-bottom: 3rem;
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        .contact-email {
-            color: var(--secondary);
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+    <title>Crimson Pages Noir</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#ef4444',
+              secondary: '#ec4899',
             }
-            
-            .container {
-                padding: 0 15px;
-            }
+          }
         }
-    </style>
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/book-card.js"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Kundan Sharma</h1>
-            <p class="intro">Author & Educator from India, creating impactful literary works that inspire and educate.</p>
-        </div>
-    </header>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <custom-navbar></custom-navbar>
     
-    <main class="container">
-        <section id="books">
-            <h2>Published Works</h2>
-            
-            <div class="book">
-                <h3 class="book-title">Title of Book One</h3>
-                <p class="book-year">2023</p>
-                <p>Description of your first book. This is where you would include a brief summary of the book's content, themes, and purpose. Highlight what makes this book unique and valuable to readers.</p>
-            </div>
-            
-            <div class="book">
-                <h3 class="book-title">Title of Book Two</h3>
-                <p class="book-year">2022</p>
-                <p>Description of your second book. Explain the subject matter, target audience, and any notable aspects of this publication. Keep it concise but informative.</p>
-            </div>
-        </section>
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-primary mb-8">Featured Books</h1>
         
-        <section id="ownership">
-            <h2>Ownership & Copyright</h2>
-            <p>I, Kundan Sharma, am the sole author and copyright owner of all works listed on this website. All rights are reserved for these original creations.</p>
-            <p>Artificial intelligence tools were used only as supportive aids in the creation process, with all creative direction, content decisions, and final works being my own.</p>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>For professional inquiries regarding my published works, please contact me at:</p>
-            <p class="contact-email">your.email@example.com</p>
-            <p>(This should match the email associated with your Google Play Books account)</p>
-        </section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <book-card 
+                title="The Crimson King" 
+                author="Stephen King" 
+                thumbnail="https://enzostvs-cached-generation.hf.space/generate/a-dark-fantasy-book-cover-with-a-crimson-king?format=portrait-9_16"
+                rating="4.5">
+            </book-card>
+            
+            <book-card 
+                title="Midnight Rose" 
+                author="Victoria Holt" 
+                thumbnail="https://enzostvs-cached-generation.hf.space/generate/a-gothic-romance-book-cover-with-a-rose?format=portrait-9_16"
+                rating="4.2">
+            </book-card>
+            
+            <book-card 
+                title="Noir Detective" 
+                author="Raymond Chandler" 
+                thumbnail="https://enzostvs-cached-generation.hf.space/generate/a-noir-detective-book-cover-with-shadowy-figure?format=portrait-9_16"
+                rating="4.7">
+            </book-card>
+            
+            <book-card 
+                title="Blood Moon" 
+                author="Anne Rice" 
+                thumbnail="https://enzostvs-cached-generation.hf.space/generate/a-vampire-novel-book-cover-with-blood-moon?format=portrait-9_16"
+                rating="4.8">
+            </book-card>
+        </div>
     </main>
     
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> Kundan Sharma. All rights reserved.</p>
-        </div>
-    </footer>
+    <custom-footer></custom-footer>
     
     <script>
-        // Set current year in copyright
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        feather.replace();
     </script>
+    <script src="script.js"></script>
+<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
 </body>
 </html>
